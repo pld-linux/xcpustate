@@ -5,8 +5,6 @@ Version:	2.5
 Release:	5
 License:	Freely redistributable
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
 Patch0:		%{name}-%{version}-nlist.patch
 Patch1:		%{name}-%{version}-alpha.patch
