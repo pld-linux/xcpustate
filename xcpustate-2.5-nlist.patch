@@ -1,0 +1,11 @@
+--- xcpustate-2.5/s-linux.c.nlist	Wed Jun  3 18:04:49 1998
++++ xcpustate-2.5/s-linux.c	Wed Jun  3 18:04:59 1998
+@@ -8,7 +8,7 @@
+ /* LINTLIBRARY */
+ #include <sys/param.h>
+ #include <sys/types.h>
+-#include <nlist.h>
++#include <libelf/nlist.h>
+ 
+ #include <stdio.h>
+ 

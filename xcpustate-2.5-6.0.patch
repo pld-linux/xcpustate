@@ -1,0 +1,18 @@
+--- xcpustate-2.5/rstat.c.mike	Mon Dec 21 15:44:28 1998
++++ xcpustate-2.5/rstat.c	Mon Dec 21 15:46:14 1998
+@@ -11,6 +11,7 @@
+ #include <sys/types.h>
+ #include <sys/file.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <rpc/rpc.h>
+ #include "rstat.h"
+ 
+@@ -96,7 +97,6 @@
+ {
+         char **names;
+         int i, base;
+-        extern char *strcpy();
+         static char hname[MAXHOSTNAMELEN + 1];
+ 	char buf[MAXHOSTNAMELEN + 1 + BUFFSIZE];
+ 	char *cpname="";

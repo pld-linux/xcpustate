@@ -1,0 +1,12 @@
+--- xcpustate-2.5/s-linux.c.alpha	Tue Jun 16 17:23:39 1998
++++ xcpustate-2.5/s-linux.c	Tue Jun 16 17:24:00 1998
+@@ -8,7 +8,9 @@
+ /* LINTLIBRARY */
+ #include <sys/param.h>
+ #include <sys/types.h>
++#if 0
+ #include <libelf/nlist.h>
++#endif
+ 
+ #include <stdio.h>
+ 
