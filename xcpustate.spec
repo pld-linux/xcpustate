@@ -1,14 +1,16 @@
 Summary:	An X Window System based CPU state monitor
+Summary(pl):	Monitor stanu procesora pod X Window System
 Name:		xcpustate
 Version:	2.5
 Release:	5
-Copyright:	Freely redistributable
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+License:	Freely redistributable
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
-Patch0:		xcpustate-%{version}-nlist.patch
-Patch1:		xcpustate-%{version}-alpha.patch
-Patch2:		xcpustate-%{version}-6.0.patch
+Patch0:		%{name}-%{version}-nlist.patch
+Patch1:		%{name}-%{version}-alpha.patch
+Patch2:		%{name}-%{version}-6.0.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -22,6 +24,11 @@ idle, user, nice and system time (from left to right) used by the CPU.
 
 Install the xcpustate package if you'd like to use a horizontal bar
 style CPU state monitor.
+
+%description -l pl
+Narzêdzie xcpustate jest dzia³aj±cym pod X Window System monitorem
+pokazuj±cym jak du¿o czasu procesor spêdza w poszczególnych stanach.
+Pod Linuksem xcpustate rysuje wykres czasu idle, user, nice i system.
 
 %prep
 %setup -q
@@ -39,12 +46,10 @@ xmkmf
 rm -rf $RPM_BUILD_ROOT
 %{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xcpustate
-%{_mandir}/man1/xcpustate.1x.gz
+%{_mandir}/man1/xcpustate.1x*
