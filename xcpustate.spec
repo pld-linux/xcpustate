@@ -9,6 +9,7 @@ Source0:	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
 Patch0:		%{name}-%{version}-nlist.patch
 Patch1:		%{name}-%{version}-alpha.patch
 Patch2:		%{name}-%{version}-6.0.patch
+BuildRequires:	libelf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
