@@ -8,7 +8,7 @@ Source:		ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
 Patch0:		xcpustate-%{version}-nlist.patch
 Patch1:		xcpustate-%{version}-alpha.patch
 Patch2:		xcpustate-%{version}-6.0.patch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		/usr/X11R6/man
