@@ -1,15 +1,17 @@
-Summary: An X Window System based CPU state monitor.
-Name: xcpustate
-%define version	2.5
-Version: %{version}
-Release: 5
-Copyright: Freely redistributable
-Group: Applications/System
-Source: ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/xcpustate-%{version}.tar.gz
-Patch0: xcpustate-%{version}-nlist.patch
-Patch1: xcpustate-%{version}-alpha.patch
-Patch2: xcpustate-%{version}-6.0.patch
-BuildRoot: /var/tmp/xcpustate-root
+Summary:	An X Window System based CPU state monitor.
+Name:		xcpustate
+Version:	2.5
+Release:	5
+Copyright:	Freely redistributable
+Group:		Applications/System
+Source:		ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
+Patch0:		xcpustate-%{version}-nlist.patch
+Patch1:		xcpustate-%{version}-alpha.patch
+Patch2:		xcpustate-%{version}-6.0.patch
+BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		/usr/X11R6/man
 
 %description
 The xcpustate utility is an X Window System based monitor which shows
@@ -22,10 +24,10 @@ CPU state monitor.
 
 %prep
 %setup -q
-%patch0 -p1 -b .nlist
-%patch2 -p1 -b .glibc
+%patch0 -p1
+%patch2 -p1
 %ifarch alpha
-%patch1 -p1 -b .alpha
+%patch1 -p1
 %endif
 
 %build
@@ -34,11 +36,16 @@ make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make DESTDIR=$RPM_BUILD_ROOT install install.man
+make install install.man DESTDIR=$RPM_BUILD_ROOT
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%attr(0755,root,root) /usr/X11R6/bin/xcpustate
-%attr(0644,root,root) /usr/X11R6/man/man1/xcpustate.1x
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/xcpustate
+%{_mandir}/man1/xcpustate.1x.gz
