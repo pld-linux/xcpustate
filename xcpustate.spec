@@ -2,8 +2,8 @@ Summary:	An X Window System based CPU state monitor
 Summary(pl):	Monitor stanu procesora pod X Window System
 Name:		xcpustate
 Version:	2.5
-Release:	5
-License:	Freely redistributable
+Release:	6
+License:	freely distributable
 Group:		Applications/System
 Source0:	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
 Patch0:		%{name}-%{version}-nlist.patch
