@@ -1,10 +1,11 @@
-Summary:	An X Window System based CPU state monitor.
+Summary:	An X Window System based CPU state monitor
 Name:		xcpustate
 Version:	2.5
 Release:	5
 Copyright:	Freely redistributable
-Group:		Applications/System
-Source:		ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
+Group:		Utilities/System
+Group(pl):	Narzêdzia/System
+Source0:	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
 Patch0:		xcpustate-%{version}-nlist.patch
 Patch1:		xcpustate-%{version}-alpha.patch
 Patch2:		xcpustate-%{version}-6.0.patch
@@ -15,12 +16,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The xcpustate utility is an X Window System based monitor which shows
-the amount of time that the CPU is spending in different states.  On a
-Linux system, xcpustate displays a bar that indicates the amounts of idle,
-user, nice and system time (from left to right) used by the CPU.
+the amount of time that the CPU is spending in different states. On a
+Linux system, xcpustate displays a bar that indicates the amounts of
+idle, user, nice and system time (from left to right) used by the CPU.
 
-Install the xcpustate package if you'd like to use a horizontal bar style
-CPU state monitor.
+Install the xcpustate package if you'd like to use a horizontal bar
+style CPU state monitor.
 
 %prep
 %setup -q
@@ -32,7 +33,7 @@ CPU state monitor.
 
 %build
 xmkmf
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
