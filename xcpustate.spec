@@ -6,6 +6,7 @@ Release:	6
 License:	freely distributable
 Group:		Applications/System
 Source0:	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/%{name}-%{version}.tar.gz
+# Source0-md5:	a40054e91c694b8a87be8f5819d8ad09
 Patch0:		%{name}-%{version}-nlist.patch
 Patch1:		%{name}-%{version}-alpha.patch
 Patch2:		%{name}-%{version}-6.0.patch
