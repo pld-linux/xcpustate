@@ -1,5 +1,5 @@
 Summary:	An X Window System based CPU state monitor
-Summary(pl):	Monitor stanu procesora pod X Window System
+Summary(pl.UTF-8):   Monitor stanu procesora pod X Window System
 Name:		xcpustate
 Version:	2.5
 Release:	6
@@ -25,9 +25,9 @@ idle, user, nice and system time (from left to right) used by the CPU.
 Install the xcpustate package if you'd like to use a horizontal bar
 style CPU state monitor.
 
-%description -l pl
-Narzêdzie xcpustate jest dzia³aj±cym pod X Window System monitorem
-pokazuj±cym jak du¿o czasu procesor spêdza w poszczególnych stanach.
+%description -l pl.UTF-8
+NarzÄ™dzie xcpustate jest dziaÅ‚ajÄ…cym pod X Window System monitorem
+pokazujÄ…cym jak duÅ¼o czasu procesor spÄ™dza w poszczegÃ³lnych stanach.
 Pod Linuksem xcpustate rysuje wykres czasu idle, user, nice i system.
 
 %prep
