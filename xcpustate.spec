@@ -1,5 +1,5 @@
 Summary:	An X Window System based CPU state monitor
-Summary(pl.UTF-8):   Monitor stanu procesora pod X Window System
+Summary(pl.UTF-8):	Monitor stanu procesora pod X Window System
 Name:		xcpustate
 Version:	2.5
 Release:	6
